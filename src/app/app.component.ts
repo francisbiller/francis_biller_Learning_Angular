@@ -7,7 +7,11 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
+
 })
 export class AppComponent {
   title = 'francis-biller-Angular-Project';
+  name : string = 'francis';
+  job : string = 'computer programmer';
+
 }
