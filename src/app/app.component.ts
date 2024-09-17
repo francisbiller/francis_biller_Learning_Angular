@@ -11,7 +11,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'francis-biller-Angular-Project';
-  name : string = 'francis';
-  job : string = 'computer programmer';
-
+  name: string = 'francis';
+  job: string = 'computer programmer';
 }
