@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import {User} from "../Shared/Models/User";
+import {GameListItemComponent} from "../game-list-item/game-list-item.component";
+import {Games} from "../Games";
+
 
 @Component({
   selector: 'app-game-list',
   standalone: true,
-  imports: [],
+  imports: [
+    GameListItemComponent
+  ],
   templateUrl: './game-list.component.html',
   styleUrl: './game-list.component.css'
 })
 export class GameListComponent {
-  contentItems = [
+  contentItems: Games[] = [
     {
       title: 'Call Of duty Modern Warfare 3',
       genre: 'action',

@@ -1,5 +1,5 @@
 <p>game-list works!</p>
-<ContentListItem></ContentListItem>
-<ContentListItem></ContentListItem>
-<ContentListItem></ContentListItem>
-<ContentListItem></ContentListItem>
+<div *ngFor="let item of contentItems">
+  <app-game-list-item [games]="item"></app-game-list-item>
+</div>
+

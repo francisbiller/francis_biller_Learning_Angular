@@ -1,6 +1,7 @@
 import { Component , Input } from '@angular/core';
 import {Games} from "../Games";
 
+
 @Component({
   selector: 'app-game-list-item',
   standalone: true,
