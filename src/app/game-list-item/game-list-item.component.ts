@@ -10,5 +10,5 @@ import {Games} from "../Games";
   styleUrl: './game-list-item.component.css'
 })
 export class GameListItemComponent {
-  @Input() games?:Games;
+  @Input() games!:Games;
 }
