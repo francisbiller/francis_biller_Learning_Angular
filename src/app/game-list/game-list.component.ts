@@ -26,7 +26,7 @@ import {GameService} from "../service/game-service.service";
     this.gameService.getGames().subscribe({
       next: (data: Games[]) =>this.gameList = data,
       error:err => console.error("Error fetching Students", err),
-      complete:() => console.log("Student data fetch complete!")// Set the game list from the service
+      complete:() => console.log("Student data fetch complete!")
     });
   }
 }

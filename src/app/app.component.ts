@@ -11,20 +11,20 @@ import { GameService } from './service/game-service.service'; // Import the serv
   standalone: true,
   imports: [RouterOutlet, NgForOf, NgIf, GameListItemComponent, GameListComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // Corrected to styleUrls
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  singleGame!: Games; // Use definite assignment operator if you're initializing later
+  singleGame!: Games;
 
   constructor(private gameService: GameService) {
   } // Inject the service
 
   ngOnInit(): void {
-    const gameId = 1; // Specify the ID of the game you want to retrieve
+    const gameId = 1;
 
-    // Fetch a single game using the service
+
     this.gameService.getGameById(gameId).subscribe(game => {
-      this.singleGame = game!; // Assign the fetched game to singleGame
+      this.singleGame = game!;
       console.log('Fetched game:', this.singleGame);
     });
   }
