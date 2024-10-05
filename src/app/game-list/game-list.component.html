@@ -1,8 +1,6 @@
 <p>game-list works!</p>
-<div *ngFor="let item of contentItems; let i = index"[ngClass]="{'even': i % 2 == 0, 'odd': i % 2 != 0}">
+<div *ngFor="let item of gameList; let i = index" [ngClass]="{'even': i % 2 == 0, 'odd': i % 2 != 0}">
 
-
-  <app-game-list-item [games]="item" ></app-game-list-item>
+  <app-game-list-item [games]="item"></app-game-list-item>
 
 </div>
-
