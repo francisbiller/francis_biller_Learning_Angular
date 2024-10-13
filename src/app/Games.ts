@@ -4,4 +4,5 @@ export interface Games {
   genre: string;
   yearReleased: number;
   productionCompany: string;
+  imageUrl: string;
 }

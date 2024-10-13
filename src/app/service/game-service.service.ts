@@ -8,37 +8,36 @@ import {gameList} from "../data/games-content";
   providedIn: 'root'
 })
 export class GameService {
-  private games: Games[] = gameList; // Local copy of the game list
+  private games: Games[] = gameList;
 
   constructor() { }
 
-  // Method to get all games
+
   getGames(): Observable<Games[]> {
     return of(this.games);
   }
 
-  // Method to get a game by id
   getGameById(id: number): Observable<Games | undefined> {
-    const game = this.games.find(item => item.id === id); // Assuming each game has an id
+    const game = this.games.find(item => item.id === id);
     return of(game);
   }
 
-  // Method to add a new game
+
   addGame(newGame: Games): Observable<Games[]> {
-    this.games.push(newGame); // Add the new game to the array
-    return of(this.games); // Return the updated array
+    this.games.push(newGame);
+    return of(this.games);
   }
 
-  // Method to update an existing game
+
   updateGame(updatedGame: Games): Observable<Games[]> {
     const index = this.games.findIndex(item => item.id === updatedGame.id);
     if (index !== -1) {
-      this.games[index] = updatedGame; // Update the existing game
+      this.games[index] = updatedGame;
     }
-    return of(this.games); // Return the updated array
+    return of(this.games);
   }
 
-  // Method to remove a game by id
+
   deleteGame(id: number): Observable<Games[]> {
     this.games = this.games.filter(user => user.id !== id);
     return of(this.games);
