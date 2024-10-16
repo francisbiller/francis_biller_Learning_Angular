@@ -1,11 +1,17 @@
-<!-- FRANCIS BILLER
-#0855164
 
--->
+<div>
+  <h1>Game Collection</h1>
 
-<!-- app.component.html -->
+
+<app-game-list-item [games]="singleGame"></app-game-list-item>
+
 <app-game-list></app-game-list>
+</div>
+<div class = "nav-bar">
+  <nav>
+    <a routerLink="shared/games" routerLinkActive="active">Game List</a>
+    <a routerLink="modify-game" routerLinkActive="active">Modify Game</a>
 
-
-    <!-- ternary operator to give user appropriate feedback -->
-
+  </nav>
+</div>
+<router-outlet></router-outlet>

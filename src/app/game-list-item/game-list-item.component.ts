@@ -1,5 +1,7 @@
-import { Component , Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Games} from "../Games";
+
+import { User } from '../Shared/Models/User';
 
 
 @Component({
@@ -9,6 +11,13 @@ import {Games} from "../Games";
   templateUrl: './game-list-item.component.html',
   styleUrl: './game-list-item.component.css'
 })
-export class GameListItemComponent {
-  @Input() games!:Games;
+export class GameListItemComponent implements OnInit {
+  @Input() games!: Games;
+
+  constructor(){}
+
+  ngOnInit(): void {
+    console.log('Game item', this.games);
+  }
 }
+
