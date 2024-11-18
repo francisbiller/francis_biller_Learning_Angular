@@ -29,4 +29,5 @@ import {GameService} from "../service/game-service.service";
       complete:() => console.log("Student data fetch complete!")
     });
   }
+  delete(id:)
 }
