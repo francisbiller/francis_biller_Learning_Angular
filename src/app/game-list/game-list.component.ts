@@ -1,11 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-
-import {GameListItemComponent} from "../game-list-item/game-list-item.component";
-import {Games} from "../Games";
-import {NgClass, NgForOf} from "@angular/common";
-import {gameList} from "../data/games-content";
-import {GameService} from "../service/game-service.service";
-
+import { Component, OnInit } from '@angular/core';
+import { GameListItemComponent } from "../game-list-item/game-list-item.component";
+import { Games } from "../Games";
+import {DatePipe, NgClass, NgForOf, TitleCasePipe, UpperCasePipe} from "@angular/common";
+import { GameService } from "../service/game-service.service";
+import { Router } from '@angular/router';
+import {GamenamesPipe} from "../pipes/gamenames.pipe";
 
 @Component({
   selector: 'app-game-list',
@@ -13,21 +12,36 @@ import {GameService} from "../service/game-service.service";
   imports: [
     GameListItemComponent,
     NgClass,
-    NgForOf
+    NgForOf,
+    GamenamesPipe,
+    TitleCasePipe,
+    UpperCasePipe,
+    DatePipe
   ],
   templateUrl: './game-list.component.html',
-  styleUrl: './game-list.component.css'
-})export class GameListComponent implements OnInit {
+  styleUrls: ['./game-list.component.css']
+})
+export class GameListComponent implements OnInit {
   gameList: Games[] = [];
 
-  constructor(private gameService: GameService) { }
+  constructor(
+    private gameService: GameService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.gameService.getGames().subscribe({
-      next: (data: Games[]) =>this.gameList = data,
-      error:err => console.error("Error fetching Students", err),
-      complete:() => console.log("Student data fetch complete!")
+      next: (data: Games[]) => this.gameList = data,
+      error: (err) => console.error("Error fetching games", err),
+      complete: () => console.log("Game data fetch complete!")
     });
   }
-  delete(id:)
+
+  delete(id: number): void {
+    this.gameList = this.gameList.filter(game => game.id !== id);
+  }
+
+  edit(): void {
+    this.router.navigate(['modify-list-item']);
+  }
 }

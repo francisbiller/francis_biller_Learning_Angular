@@ -1,8 +1,14 @@
 <p>game-list works!</p>
 <div *ngFor="let item of gameList; let i = index" [ngClass]="{'even': i % 2 == 0, 'odd': i % 2 != 0}">
+  <p>Id:{{item.id}}</p>
+  <p>title: {{item | gamenames  |titlecase}}</p>
+  <p>production company: {{item.productionCompany|uppercase}}</p>
+  <p>yearReleased : {{ item.yearReleased | date: 'yyyy' }}</p>
 
   <app-game-list-item [games]="item"></app-game-list-item>
   <img [src]="item.imageUrl" alt="{{ item.title }}"/>
+  <button type="button" (click)="delete(item.id)">Delete</button>
+  <button type="button" (click)="edit()">Edit</button>
 
 
 </div>

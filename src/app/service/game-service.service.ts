@@ -41,5 +41,11 @@ export class GameService {
   deleteGame(id: number): Observable<Games[]> {
     this.games = this.games.filter(user => user.id !== id);
     return of(this.games);
+
+
   }
+  generateNewId():number {
+    return this.games.length > 0 ? Math.max(...this.games.map(game => game.id))+1:1;
+  }
+
 }
