@@ -5,7 +5,7 @@
   <p>production company: {{item.productionCompany|uppercase}}</p>
   <p>Year Released: {{ item.yearReleased | date: 'fullDate' }}</p>
 
-
+//
 
   <app-game-list-item [games]="item"></app-game-list-item>
   <img [src]="item.imageUrl" alt="{{ item.title }}"/>
