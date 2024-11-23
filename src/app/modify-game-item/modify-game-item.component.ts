@@ -4,11 +4,12 @@ import { Games } from '../Games';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import {GameService} from "../service/game-service.service";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 @Component({
   selector: 'app-modify-game-item',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, HighlightOnFocusDirective],
   templateUrl: './modify-game-item.component.html',
   styleUrls: ['./modify-game-item.component.css']
 })
