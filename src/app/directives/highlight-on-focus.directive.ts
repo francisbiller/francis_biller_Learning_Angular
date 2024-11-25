@@ -12,7 +12,7 @@ export class HighlightOnFocusDirective {
   }
 
   @HostListener('focus') onfocus() {
-    this.focus(this.appHighlightOnFocus || 'red');
+    this.focus(this.appHighlightOnFocus || 'silver');
   }
 
   @HostListener('blur') blur() {

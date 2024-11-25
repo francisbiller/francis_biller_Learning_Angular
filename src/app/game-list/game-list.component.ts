@@ -3,8 +3,9 @@ import { GameListItemComponent } from "../game-list-item/game-list-item.componen
 import { Games } from "../Games";
 import {DatePipe, NgClass, NgForOf, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import { GameService } from "../service/game-service.service";
-import { Router } from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {GamenamesPipe} from "../pipes/gamenames.pipe";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-game-list',
@@ -16,7 +17,9 @@ import {GamenamesPipe} from "../pipes/gamenames.pipe";
     GamenamesPipe,
     TitleCasePipe,
     UpperCasePipe,
-    DatePipe
+    DatePipe,
+    RouterLink,
+    HoverHighlightDirective
   ],
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.css']

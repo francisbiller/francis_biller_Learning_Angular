@@ -1,5 +1,5 @@
 <p>game-list works!</p>
-<div *ngFor="let item of gameList; let i = index" [ngClass]="{'even': i % 2 == 0, 'odd': i % 2 != 0}">
+<div *ngFor="let item of gameList" [routerLink]="['/item',item.id]"[appHoverHighlight]="'red'">;
   <p>Id:{{item.id}}</p>
   <p>title: {{item | gamenames  |titlecase}}</p>
   <p>production company: {{item.productionCompany|uppercase}}</p>
