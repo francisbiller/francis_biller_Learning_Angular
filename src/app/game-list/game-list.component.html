@@ -1,16 +1,18 @@
+<div class = "mat-container">
 <p>game-list works!</p>
-<div *ngFor="let item of gameList" [routerLink]="['/item',item.id]"[appHoverHighlight]="'red'">;
-  <p>Id:{{item.id}}</p>
-  <p>title: {{item | gamenames  |titlecase}}</p>
-  <p>production company: {{item.productionCompany|uppercase}}</p>
-  <p>Year Released: {{ item.yearReleased | date: 'fullDate' }}</p>
-
-//
+ <mat-list class="user" *ngFor="let item of gameList" [routerLink]="['/item',item.id]"[appHoverHighlight]="'red'" role="list">;
+  <mat-list-item>Id:{{item.id}} </mat-list-item>
+  <mat-list-item>title: {{item | gamenames  |titlecase}} </mat-list-item>
+  <mat-list-item>production company: {{item.productionCompany|uppercase}} </mat-list-item>
+  <mat-list-item>Year Released: {{ item.yearReleased | date: 'fullDate' }} </mat-list-item>
 
   <app-game-list-item [games]="item"></app-game-list-item>
   <img [src]="item.imageUrl" alt="{{ item.title }}"/>
+  <div class ="button-group">
   <button type="button" (click)="delete(item.id)">Delete</button>
-  <button type="button" (click)="edit()">Edit</button>
+  <button mat-flat-button color="primary" type="button" (click)="edit()">Edit</button>
 
 
+</div>
+</mat-list>
 </div>

@@ -1,15 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Game</span>
+  <span class="spacer"></span>
+    <button mat-button routerLink="shared/games" routerLinkActive="active">Game List</button>
+    <button mat-button routerLink="modify-game" routerLinkActive="active">Modify Game</button>
+</mat-toolbar>
 
-<div>
-  <h1>Game Collection</h1>
+<div class = "app-container">
 
-
-<app-game-list></app-game-list>
+  <router-outlet></router-outlet>
 </div>
-<div class = "nav-bar">
-  <nav>
-    <a routerLink="shared/games" routerLinkActive="active">Game List</a>
-    <a routerLink="modify-game" routerLinkActive="active">Modify Game</a>
 
-  </nav>
-</div>
-<router-outlet></router-outlet>

@@ -1,11 +1,12 @@
 <p>game-list-item works!</p>
-<div class ="games-item">
-
-  <h3>{{games.title}}</h3>
-  <p><strong>ID:</strong>{{games.id}}</p>
-  <p><strong>Genre:</strong>{{games.genre}}</p>
-  <p><strong>Year released:</strong>{{games.yearReleased}}</p>
-  <p><strong>Production Company:</strong>{{games.productionCompany}}</p>
-
+<div>
+<mat-card  class="games">
+  <mat-card-title> games</mat-card-title>
+  <mat-card-content>{{games.title}}</mat-card-content>
+  <mat-card-content>ID:{{games.id}}</mat-card-content>
+  <mat-card-content>Genre:{{games.genre}}</mat-card-content>
+  <mat-card-content>Year released:{{games.yearReleased}}</mat-card-content>
+  <mat-card-content>Production Company:{{games.productionCompany}}</mat-card-content>
+  </mat-card>
 
 </div>
