@@ -1,38 +1,32 @@
-<form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="mat-form">>
+<form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="mat-form">
 
-  <mat-form-field class="form-group" disabled>
-    <mat-label></mat-label>
-    <input type="number" id="id" formControlName="id" [appHighlightOnFocus]="'yellow'" />
-    </mat-form-field>
+  <mat-form-field appearance="outline" class="form-field" disabled>
+    <mat-label>ID</mat-label>
+    <input matInput type="number" formControlName="id" [appHighlightOnFocus]="'yellow'" matTooltip ="enter id" />
+  </mat-form-field>
 
+  <mat-form-field appearance="outline"  class="form-field">
+    <mat-label>Title</mat-label>
+    <input matInput type="text" formControlName="title" [appHighlightOnFocus]="'yellow'" matTooltip ="enter title"/>
+  </mat-form-field>
 
-    <mat-form-field  class="form-group" disabled>
-      <mat-label>for="title">Title</mat-label>
-    <input type="text" id="title" formControlName="title" [appHighlightOnFocus]="'yellow'"  />
-      </mat-form-field>
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Genre</mat-label>
+    <input matInput type="text" formControlName="genre" [appHighlightOnFocus]="'yellow'" matTooltip ="enter genre"/>
+  </mat-form-field>
 
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Year Released</mat-label>
+    <input matInput type="number" formControlName="yearReleased" [appHighlightOnFocus]="'yellow'" matTooltip="enter year release"/>
+  </mat-form-field>
 
-  <mat-form-field appearance="outline" class="form-group" disabled>
-        <mat-label> for="genre">Genre</mat-label>
-    <input type="text" id="genre" formControlName="genre"[appHighlightOnFocus]="'yellow'"  />
-        </mat-form-field>
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Production Company</mat-label>
+    <input matInput type="text" formControlName="productionCompany" [appHighlightOnFocus]="'yellow'" matTooltip="enter production company"/>
+  </mat-form-field>
 
-
-  <mat-form-field appearance="outline" class="form-group" disabled>
-    <mat-label> for="yearReleased">Year Released</mat-label>
-    <input type="number" id="yearReleased" formControlName="yearReleased" [appHighlightOnFocus]="'yellow'" />
-    </mat-form-field>
-
-
-  <mat-form-field appearance="outline" class="form-group" disabled>
-      <mat-label>for="productionCompany">Production Company</mat-label>
-    <input type="text" id="productionCompany" formControlName="productionCompany"[appHighlightOnFocus]="'yellow'"  />
-      </mat-form-field>
-
-<div class="button-group">
-  <button mat-raised-button color="primary"  type="submit">Submit</button>
-</div>
+  <div class="button-group">
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </div>
 
 </form>
-
-

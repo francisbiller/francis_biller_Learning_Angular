@@ -3,13 +3,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Games } from '../Games';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import {GameService} from "../service/game-service.service";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {GameService} from "../service/game-service.service";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-modify-game-item',
   standalone: true,
-  imports: [ReactiveFormsModule, HighlightOnFocusDirective],
+  imports: [ReactiveFormsModule, HighlightOnFocusDirective, MatInputModule, MatButtonModule, MatTooltipModule],
   templateUrl: './modify-game-item.component.html',
   styleUrls: ['./modify-game-item.component.css']
 })

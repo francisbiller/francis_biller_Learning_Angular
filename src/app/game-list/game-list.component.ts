@@ -6,6 +6,8 @@ import { GameService } from "../service/game-service.service";
 import {Router, RouterLink} from '@angular/router';
 import {GamenamesPipe} from "../pipes/gamenames.pipe";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {MatListModule} from "@angular/material/list";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-game-list',
@@ -19,7 +21,9 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
     UpperCasePipe,
     DatePipe,
     RouterLink,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatListModule,
+    MatButtonModule,
   ],
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.css']
